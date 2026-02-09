@@ -1,4 +1,4 @@
-# B2B Platform
+# AfriTradeHub - B2B Business Platform
 
 A modern, responsive B2B business platform website built with HTML, CSS, and JavaScript.
 
@@ -24,7 +24,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions to vario
 ## Structure
 
 ```
-b2b-platform/
+Afritradehub/
 ├── index.html      # Main HTML file
 ├── styles.css      # All styling
 ├── script.js       # Interactive features
@@ -52,6 +52,10 @@ b2b-platform/
 2. **Content**: Update text in `index.html`
 3. **Contact Info**: Change email, phone, address in contact section
 4. **Pricing**: Modify pricing tiers in pricing section
+
+## Live Demo
+
+Visit the live website: [https://fizoopollo.github.io/Afritradehub/](https://fizoopollo.github.io/Afritradehub/)
 
 ## License
 
