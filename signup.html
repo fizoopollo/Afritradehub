@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AfriTradeHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .auth-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .auth-header h1 {
+            color: #ff6b35;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .auth-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .account-type {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .account-type-btn {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .account-type-btn:hover {
+            border-color: #ff6b35;
+            background: #fff5f2;
+        }
+        .account-type-btn.active {
+            border-color: #ff6b35;
+            background: #fff5f2;
+        }
+        .account-type-btn .icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .account-type-btn .title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .account-type-btn .desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .password-requirements {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .terms-checkbox input {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+        .terms-checkbox label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .terms-checkbox a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+        .btn-signup {
+            width: 100%;
+            padding: 14px;
+            background: #ff6b35;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-signup:hover {
+            background: #e55a2b;
+        }
+        .btn-signup:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .signin-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .signin-link a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1>AfriTradeHub</h1>
+                <p>Create your free account</p>
+            </div>
+
+            <div id="successMessage" class="success-message"></div>
+            <div id="errorMessage" class="error-message"></div>
+
+            <div class="account-type">
+                <div class="account-type-btn active" onclick="selectAccountType('buyer')">
+                    <div class="icon">🛒</div>
+                    <div class="title">Buyer</div>
+                    <div class="desc">I want to source products</div>
+                </div>
+                <div class="account-type-btn" onclick="selectAccountType('supplier')">
+                    <div class="icon">🏭</div>
+                    <div class="title">Supplier</div>
+                    <div class="desc">I want to sell products</div>
+                </div>
+            </div>
+
+            <form id="signupForm">
+                <input type="hidden" id="accountType" value="buyer">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="+234 800 000 0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name *</label>
+                    <input type="text" id="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select id="country" required>
+                        <option value="">Select your country</option>
+                        <option value="NG">🇳🇬 Nigeria</option>
+                        <option value="GH">🇬🇭 Ghana</option>
+                        <option value="KE">🇰🇪 Kenya</option>
+                        <option value="ZA">🇿🇦 South Africa</option>
+                        <option value="EG">🇪🇬 Egypt</option>
+                        <option value="MA">🇲🇦 Morocco</option>
+                        <option value="ET">🇪🇹 Ethiopia</option>
+                        <option value="TZ">🇹🇿 Tanzania</option>
+                        <option value="UG">🇺🇬 Uganda</option>
+                        <option value="SN">🇸🇳 Senegal</option>
+                        <option value="Other">Other African Country</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" required>
+                    <div class="password-requirements">
+                        Must be at least 8 characters with a mix of letters and numbers
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">
+                        Send me trade insights, product updates and promotional offers
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-signup">Create Account</button>
+            </form>
+
+            <div class="signin-link">
+                Already have an account? <a href="signin.html">Sign in</a>
+            </div>
+
+            <div class="back-home" style="margin-top: 30px;">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedAccountType = 'buyer';
+
+        function selectAccountType(type) {
+            selectedAccountType = type;
+            document.getElementById('accountType').value = type;
+            
+            // Update UI
+            document.querySelectorAll('.account-type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                accountType: document.getElementById('accountType').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                country: document.getElementById('country').value,
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                terms: document.getElementById('terms').checked,
+                newsletter: document.getElementById('newsletter').checked
+            };
+            
+            // Hide previous messages
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // Validation
+            if (formData.password !== formData.confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+            
+            if (formData.password.length < 8) {
+                showError('Password must be at least 8 characters long');
+                return;
+            }
+            
+            if (!formData.terms) {
+                showError('You must agree to the Terms of Service');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+            
+            // In a real application, this would send data to a server
+            console.log('Sign up data:', formData);
+            
+            // Show success message
+            const successDiv = document.getElementById('successMessage');
+            successDiv.innerHTML = `
+                <h3 style="margin-bottom: 10px;">✓ Account Created Successfully!</h3>
+                <p>Welcome to AfriTradeHub, ${formData.firstName}!</p>
+                <p>Redirecting to your dashboard...</p>
+            `;
+            successDiv.style.display = 'block';
+            
+            // Store user data
+            localStorage.setItem('userEmail', formData.email);
+            localStorage.setItem('userName', `${formData.firstName} ${formData.lastName}`);
+            localStorage.setItem('userCompany', formData.company);
+            localStorage.setItem('accountType', formData.accountType);
+            localStorage.setItem('isLoggedIn', 'true');
+            
+            // Hide form
+            this.style.display = 'none';
+            
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 2000);
+        });
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = '❌ ' + message;
+            errorDiv.style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
