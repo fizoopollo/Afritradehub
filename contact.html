@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Supplier - AfriTradeHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" style="padding: 40px 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1>📧 Contact Supplier</h1>
+            <p>Send your inquiry directly to the supplier</p>
+            <a href="index.html" class="btn-secondary" style="display: inline-block; margin-top: 20px;">← Back to Home</a>
+        </div>
+        
+        <div style="max-width: 600px; margin: 0 auto; background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px;">
+            <form id="contactForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Your Name *</label>
+                    <input type="text" id="name" required style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Your Email *</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Company Name</label>
+                    <input type="text" id="company" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number</label>
+                    <input type="tel" id="phone" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Quantity Needed</label>
+                    <input type="text" id="quantity" placeholder="e.g., 1000 kg" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Your Message *</label>
+                    <textarea id="message" required rows="6" placeholder="Please include details about your requirements, quantity, delivery location, etc." style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Send Inquiry</button>
+            </form>
+            
+            <div id="successMessage" style="display: none; margin-top: 20px; padding: 15px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+                ✓ Your inquiry has been sent successfully! The supplier will contact you soon.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const phone = document.getElementById('phone').value;
+            const quantity = document.getElementById('quantity').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, this would send data to a server
+            console.log('Form submitted:', { name, email, company, phone, quantity, message });
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
