@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - AfriTradeHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px;
+        }
+        .auth-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+        }
+        .admin-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            width: 100%;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .auth-header h1 {
+            color: #ff6b35;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .auth-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+        .password-toggle {
+            position: relative;
+        }
+        .password-toggle input {
+            padding-right: 45px;
+        }
+        .password-toggle-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-size: 1.2rem;
+        }
+        .btn-admin-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-admin-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+        .admin-features {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .admin-features h4 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .admin-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .admin-features li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .admin-features li::before {
+            content: "✓ ";
+            color: #ffd700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="admin-badge">🔑 ADMIN ACCESS</div>
+            
+            <div class="auth-header">
+                <h1>AfriTradeHub</h1>
+                <p>Administrator Control Panel</p>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="email" id="adminEmail" placeholder="admin@afritradehub.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adminPassword">Admin Password</label>
+                    <div class="password-toggle">
+                        <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+                        <button type="button" class="password-toggle-btn" onclick="togglePassword()">👁️</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-admin-login">🔐 Login as Administrator</button>
+            </form>
+
+            <div class="admin-features">
+                <h4>Admin Privileges:</h4>
+                <ul>
+                    <li>Full platform management</li>
+                    <li>Drag & drop page editor</li>
+                    <li>Manage buyers & suppliers</li>
+                    <li>Content management system</li>
+                    <li>Analytics dashboard</li>
+                </ul>
+            </div>
+
+            <div class="back-home" style="margin-top: 30px;">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('adminPassword');
+            const toggleBtn = document.querySelector('.password-toggle-btn');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        // Handle admin login
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Hide previous errors
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Simple admin authentication (in production, use proper backend authentication)
+            // Default credentials: admin@afritradehub.com / Admin@123
+            if (email === 'admin@afritradehub.com' && password === 'Admin@123') {
+                // Set admin session
+                localStorage.setItem('isAdmin', 'true');
+                localStorage.setItem('adminEmail', email);
+                localStorage.setItem('adminName', 'Administrator');
+                localStorage.setItem('isLoggedIn', 'true');
+                
+                // Show success and redirect
+                alert('✓ Admin login successful!\n\nWelcome to the Admin Dashboard');
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                showError('Invalid admin credentials. Please try again.');
+            }
+        });
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = '❌ ' + message;
+            errorDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Show default credentials hint
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                if (confirm('Demo Mode:\n\nDefault Admin Credentials:\nEmail: admin@afritradehub.com\nPassword: Admin@123\n\nWould you like to auto-fill these credentials?')) {
+                    document.getElementById('adminEmail').value = 'admin@afritradehub.com';
+                    document.getElementById('adminPassword').value = 'Admin@123';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
