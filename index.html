@@ -3,267 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AfriTradeHub - The all-in-one B2B platform that streamlines operations and drives growth through intelligent automation across Africa.">
-    <meta name="keywords" content="B2B, business platform, enterprise solutions, automation, analytics">
-    <meta name="author" content="AfriTradeHub">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="AfriTradeHub - Business Solutions Platform">
-    <meta property="og:description" content="Transform your business connections with our all-in-one B2B platform">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AfriTradeHub - Business Solutions Platform">
-    <meta name="twitter:description" content="Transform your business connections with our all-in-one B2B platform">
-    
-    <title>AfriTradeHub - Business Solutions Platform</title>
+    <meta name="description" content="AfriTradeHub - Africa's leading B2B marketplace connecting buyers and suppliers across the continent">
+    <meta name="keywords" content="B2B marketplace, African suppliers, wholesale, manufacturers, exporters, importers">
+    <title>AfriTradeHub - Africa's Leading B2B Marketplace</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Top Bar -->
+    <div class="top-bar">
         <div class="container">
-            <div class="nav-wrapper">
+            <div class="top-bar-content">
+                <div class="top-left">
+                    <span>🌍 Sell Globally on AfriTradeHub</span>
+                </div>
+                <div class="top-right">
+                    <a href="#">Help Center</a>
+                    <a href="#">Become a Supplier</a>
+                    <a href="#">Download App</a>
+                    <select class="language-selector">
+                        <option>English</option>
+                        <option>Français</option>
+                        <option>العربية</option>
+                        <option>Português</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
                 <div class="logo">
-                    <h2>AfriTradeHub</h2>
+                    <h1>AfriTradeHub</h1>
+                    <span class="tagline">Africa's B2B Marketplace</span>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="nav-buttons">
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="What are you looking for?" class="search-input">
+                    <select class="category-select">
+                        <option>All Categories</option>
+                        <option>Agriculture</option>
+                        <option>Automotive</option>
+                        <option>Electronics</option>
+                        <option>Fashion & Textiles</option>
+                        <option>Food & Beverage</option>
+                        <option>Healthcare</option>
+                        <option>Machinery</option>
+                        <option>Mining</option>
+                        <option>Construction</option>
+                    </select>
+                    <button class="search-btn">🔍 Search</button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn-icon">💬 Messages</button>
+                    <button class="btn-icon">📋 Orders</button>
                     <button class="btn-secondary">Sign In</button>
-                    <button class="btn-primary">Get Started</button>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <button class="btn-primary">Join Free</button>
                 </div>
             </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#categories" class="active">🏪 Categories</a></li>
+                    <li><a href="#suppliers">👥 Find Suppliers</a></li>
+                    <li><a href="#products">📦 Products</a></li>
+                    <li><a href="#trade-shows">🎪 Trade Shows</a></li>
+                    <li><a href="#rfq">📝 Request for Quotation</a></li>
+                    <li><a href="#buyer-central">🛒 Buyer Central</a></li>
+                    <li><a href="#seller-central">📊 Seller Central</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-carousel">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transform Your Business Connections</h1>
-                    <p>The all-in-one B2B platform that streamlines operations, connects suppliers with buyers, and drives growth through intelligent automation.</p>
-                    <div class="hero-buttons">
-                        <button class="btn-primary btn-large">Start Free Trial</button>
-                        <button class="btn-outline btn-large">Watch Demo</button>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3>10K+</h3>
-                            <p>Active Businesses</p>
-                        </div>
-                        <div class="stat">
-                            <h3>$2.5B+</h3>
-                            <p>Transactions Processed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>99.9%</h3>
-                            <p>Uptime Guarantee</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-placeholder">
-                        <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="50" width="400" height="300" rx="10" fill="#667eea"/>
-                            <rect x="80" y="80" width="160" height="120" rx="5" fill="#fff" opacity="0.9"/>
-                            <rect x="260" y="80" width="160" height="120" rx="5" fill="#fff" opacity="0.9"/>
-                            <rect x="80" y="220" width="340" height="100" rx="5" fill="#fff" opacity="0.9"/>
-                            <circle cx="120" cy="120" r="20" fill="#667eea"/>
-                            <circle cx="300" cy="120" r="20" fill="#764ba2"/>
-                        </svg>
+            <div class="carousel-wrapper">
+                <div class="carousel-slide active">
+                    <div class="slide-content">
+                        <h2>Connect with Verified African Suppliers</h2>
+                        <p>Access millions of products from trusted manufacturers and wholesalers</p>
+                        <button class="btn-large btn-primary">Start Sourcing Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <!-- Quick Categories -->
+    <section class="quick-categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">🌾</div>
+                    <h3>Agriculture & Food</h3>
+                    <p>12,450 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👕</div>
+                    <h3>Fashion & Apparel</h3>
+                    <p>8,230 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>Electronics</h3>
+                    <p>15,670 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <h3>Construction</h3>
+                    <p>6,890 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3>Machinery</h3>
+                    <p>9,340 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💎</div>
+                    <h3>Mining & Metals</h3>
+                    <p>4,560 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🚗</div>
+                    <h3>Automotive</h3>
+                    <p>7,120 suppliers</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💊</div>
+                    <h3>Healthcare</h3>
+                    <p>5,430 suppliers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
         <div class="container">
             <div class="section-header">
-                <h2>Powerful Features for Modern Businesses</h2>
-                <p>Everything you need to manage and grow your B2B operations</p>
+                <h2 class="section-title">Hot Products</h2>
+                <a href="#" class="view-all">View All →</a>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Advanced Analytics</h3>
-                    <p>Real-time insights and data visualization to make informed business decisions.</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Verified</div>
+                    <img src="https://via.placeholder.com/250x250/667eea/ffffff?text=Product" alt="Product">
+                    <div class="product-info">
+                        <h4>Premium Coffee Beans</h4>
+                        <p class="product-price">$2.50 - $4.00 <span>/kg</span></p>
+                        <p class="product-moq">MOQ: 500 kg</p>
+                        <p class="product-supplier">🇰🇪 Kenya Coffee Exports Ltd</p>
+                        <button class="btn-contact">Contact Supplier</button>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Seamless Integration</h3>
-                    <p>Connect with your existing tools and systems through our robust API.</p>
+                <div class="product-card">
+                    <div class="product-badge">Verified</div>
+                    <img src="https://via.placeholder.com/250x250/764ba2/ffffff?text=Product" alt="Product">
+                    <div class="product-info">
+                        <h4>Organic Shea Butter</h4>
+                        <p class="product-price">$8.00 - $12.00 <span>/kg</span></p>
+                        <p class="product-moq">MOQ: 100 kg</p>
+                        <p class="product-supplier">🇬🇭 Ghana Natural Products</p>
+                        <button class="btn-contact">Contact Supplier</button>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Partner Network</h3>
-                    <p>Access a verified network of suppliers, distributors, and business partners.</p>
+                <div class="product-card">
+                    <div class="product-badge">Gold Supplier</div>
+                    <img src="https://via.placeholder.com/250x250/f093fb/ffffff?text=Product" alt="Product">
+                    <div class="product-info">
+                        <h4>Cotton Fabric Rolls</h4>
+                        <p class="product-price">$3.20 - $5.50 <span>/meter</span></p>
+                        <p class="product-moq">MOQ: 1000 meters</p>
+                        <p class="product-supplier">🇪🇬 Egyptian Textiles Co</p>
+                        <button class="btn-contact">Contact Supplier</button>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Enterprise Security</h3>
-                    <p>Bank-level encryption and compliance with international security standards.</p>
+                <div class="product-card">
+                    <div class="product-badge">Verified</div>
+                    <img src="https://via.placeholder.com/250x250/4facfe/ffffff?text=Product" alt="Product">
+                    <div class="product-info">
+                        <h4>Solar Panels 300W</h4>
+                        <p class="product-price">$85.00 - $120.00 <span>/piece</span></p>
+                        <p class="product-moq">MOQ: 50 pieces</p>
+                        <p class="product-supplier">🇿🇦 South African Solar Tech</p>
+                        <button class="btn-contact">Contact Supplier</button>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Automation Tools</h3>
-                    <p>Automate workflows, invoicing, and order processing to save time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Suppliers -->
+    <section class="top-suppliers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Suppliers</h2>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="suppliers-grid">
+                <div class="supplier-card">
+                    <div class="supplier-badge">⭐ Gold Supplier</div>
+                    <div class="supplier-header">
+                        <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=Logo" alt="Company" class="supplier-logo">
+                        <div class="supplier-info">
+                            <h3>Nigerian Exports Ltd</h3>
+                            <p>🇳🇬 Lagos, Nigeria</p>
+                            <div class="supplier-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
+                        </div>
+                    </div>
+                    <p class="supplier-desc">Leading exporter of agricultural products, processed foods, and raw materials.</p>
+                    <div class="supplier-stats">
+                        <span>📦 2,345 Products</span>
+                        <span>✅ 8 Years</span>
+                    </div>
+                    <button class="btn-outline">View Company</button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
+
+                <div class="supplier-card">
+                    <div class="supplier-badge">✓ Verified</div>
+                    <div class="supplier-header">
+                        <img src="https://via.placeholder.com/80x80/764ba2/ffffff?text=Logo" alt="Company" class="supplier-logo">
+                        <div class="supplier-info">
+                            <h3>Ethiopian Coffee Co</h3>
+                            <p>🇪🇹 Addis Ababa, Ethiopia</p>
+                            <div class="supplier-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                        </div>
+                    </div>
+                    <p class="supplier-desc">Premium coffee beans supplier with direct farm partnerships across Ethiopia.</p>
+                    <div class="supplier-stats">
+                        <span>📦 156 Products</span>
+                        <span>✅ 12 Years</span>
+                    </div>
+                    <button class="btn-outline">View Company</button>
+                </div>
+
+                <div class="supplier-card">
+                    <div class="supplier-badge">⭐ Gold Supplier</div>
+                    <div class="supplier-header">
+                        <img src="https://via.placeholder.com/80x80/f093fb/ffffff?text=Logo" alt="Company" class="supplier-logo">
+                        <div class="supplier-info">
+                            <h3>Moroccan Artisans Guild</h3>
+                            <p>🇲🇦 Marrakech, Morocco</p>
+                            <div class="supplier-rating">⭐⭐⭐⭐☆ (4.6/5)</div>
+                        </div>
+                    </div>
+                    <p class="supplier-desc">Handcrafted goods, textiles, and traditional Moroccan products for export.</p>
+                    <div class="supplier-stats">
+                        <span>📦 890 Products</span>
+                        <span>✅ 6 Years</span>
+                    </div>
+                    <button class="btn-outline">View Company</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trade Services -->
+    <section class="trade-services">
+        <div class="container">
+            <h2 class="section-title">Trade Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Sourcing Request</h3>
+                    <p>Post your requirements and get quotes from verified suppliers</p>
+                    <a href="#" class="service-link">Post Now →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Trade Assurance</h3>
+                    <p>Secure payment protection for your orders</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚢</div>
+                    <h3>Logistics Services</h3>
+                    <p>End-to-end shipping and customs solutions</p>
+                    <a href="#" class="service-link">Get Quote →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Factory Inspection</h3>
+                    <p>Verify supplier credentials and facilities</p>
+                    <a href="#" class="service-link">Request →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Markets -->
+    <section class="regional-markets">
+        <div class="container">
+            <h2 class="section-title">Explore Regional Markets</h2>
+            <div class="regions-grid">
+                <div class="region-card">
+                    <h3>🌍 West Africa</h3>
+                    <ul>
+                        <li><a href="#">Nigeria (8,945 suppliers)</a></li>
+                        <li><a href="#">Ghana (3,234 suppliers)</a></li>
+                        <li><a href="#">Senegal (1,567 suppliers)</a></li>
+                        <li><a href="#">Ivory Coast (2,123 suppliers)</a></li>
+                    </ul>
+                </div>
+                <div class="region-card">
+                    <h3>🌍 East Africa</h3>
+                    <ul>
+                        <li><a href="#">Kenya (6,789 suppliers)</a></li>
+                        <li><a href="#">Ethiopia (4,456 suppliers)</a></li>
+                        <li><a href="#">Tanzania (2,890 suppliers)</a></li>
+                        <li><a href="#">Uganda (1,678 suppliers)</a></li>
+                    </ul>
+                </div>
+                <div class="region-card">
+                    <h3>🌍 North Africa</h3>
+                    <ul>
+                        <li><a href="#">Egypt (7,234 suppliers)</a></li>
+                        <li><a href="#">Morocco (5,123 suppliers)</a></li>
+                        <li><a href="#">Tunisia (2,456 suppliers)</a></li>
+                        <li><a href="#">Algeria (3,678 suppliers)</a></li>
+                    </ul>
+                </div>
+                <div class="region-card">
+                    <h3>🌍 Southern Africa</h3>
+                    <ul>
+                        <li><a href="#">South Africa (9,456 suppliers)</a></li>
+                        <li><a href="#">Botswana (1,234 suppliers)</a></li>
+                        <li><a href="#">Zimbabwe (1,890 suppliers)</a></li>
+                        <li><a href="#">Mozambique (1,567 suppliers)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose AfriTradeHub</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Verified Suppliers</h3>
+                    <p>All suppliers undergo strict verification and background checks</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Secure Transactions</h3>
+                    <p>Trade Assurance protects your orders from payment to delivery</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Pan-African Reach</h3>
+                    <p>Connect with suppliers across all 54 African countries</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💬</div>
                     <h3>24/7 Support</h3>
-                    <p>Dedicated support team available around the clock to assist you.</p>
+                    <p>Multilingual customer support available around the clock</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="solutions">
+    <!-- CTA Banner -->
+    <section class="cta-banner">
         <div class="container">
-            <div class="section-header">
-                <h2>Solutions Tailored to Your Industry</h2>
-                <p>Specialized features for different business sectors</p>
-            </div>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>Manufacturing</h3>
-                    <p>Streamline supply chain, manage inventory, and connect with distributors efficiently.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Grow Your Business?</h2>
+                    <p>Join thousands of African businesses trading on AfriTradeHub</p>
                 </div>
-                <div class="solution-card">
-                    <h3>Wholesale & Distribution</h3>
-                    <p>Optimize order management, pricing, and logistics with our comprehensive tools.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="solution-card">
-                    <h3>Technology & SaaS</h3>
-                    <p>Manage subscriptions, partnerships, and integrations from a single platform.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="solution-card">
-                    <h3>Professional Services</h3>
-                    <p>Connect with clients, manage projects, and handle contracts seamlessly.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the plan that fits your business needs</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">99</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>✓ Up to 50 transactions/month</li>
-                        <li>✓ Basic analytics</li>
-                        <li>✓ Email support</li>
-                        <li>✓ 5 team members</li>
-                        <li>✓ API access</li>
-                    </ul>
-                    <button class="btn-outline">Get Started</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="badge">Most Popular</div>
-                    <h3>Professional</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">299</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>✓ Unlimited transactions</li>
-                        <li>✓ Advanced analytics</li>
-                        <li>✓ Priority support</li>
-                        <li>✓ 20 team members</li>
-                        <li>✓ Advanced API access</li>
-                        <li>✓ Custom integrations</li>
-                    </ul>
-                    <button class="btn-primary">Get Started</button>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">
-                        <span class="amount">Custom</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>✓ Everything in Professional</li>
-                        <li>✓ Dedicated account manager</li>
-                        <li>✓ 24/7 phone support</li>
-                        <li>✓ Unlimited team members</li>
-                        <li>✓ Custom development</li>
-                        <li>✓ SLA guarantee</li>
-                    </ul>
-                    <button class="btn-outline">Contact Sales</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-                    <div class="contact-details">
-                        <div class="detail">
-                            <h4>📧 Email</h4>
-                            <p>contact@afritradehub.com</p>
-                        </div>
-                        <div class="detail">
-                            <h4>📞 Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                        <div class="detail">
-                            <h4>📍 Address</h4>
-                            <p>123 Business Ave, Suite 100<br>New York, NY 10001</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Company Name">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary btn-large">Send Message</button>
-                    </form>
+                <div class="cta-buttons">
+                    <button class="btn-large btn-white">Start Buying</button>
+                    <button class="btn-large btn-outline-white">Start Selling</button>
                 </div>
             </div>
         </div>
@@ -272,37 +392,60 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>AfriTradeHub</h3>
-                    <p>Empowering businesses to connect, collaborate, and grow together.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Security</a></li>
-                        <li><a href="#">Integrations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
+            <div class="footer-main">
+                <div class="footer-column">
+                    <h4>About AfriTradeHub</h4>
                     <ul>
                         <li><a href="#">About Us</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Press Center</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-column">
+                    <h4>For Buyers</h4>
+                    <ul>
+                        <li><a href="#">Find Suppliers</a></li>
+                        <li><a href="#">Request for Quotation</a></li>
+                        <li><a href="#">Buyer Protection</a></li>
+                        <li><a href="#">Shipping Center</a></li>
+                        <li><a href="#">Buyer Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>For Suppliers</h4>
+                    <ul>
+                        <li><a href="#">Sell on AfriTradeHub</a></li>
+                        <li><a href="#">Supplier Membership</a></li>
+                        <li><a href="#">Seller Central</a></li>
+                        <li><a href="#">Learning Center</a></li>
+                        <li><a href="#">Partner Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Trade Insights</a></li>
+                        <li><a href="#">Market Reports</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Webinars</a></li>
                     </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#">📘 Facebook</a>
+                        <a href="#">🐦 Twitter</a>
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">💼 LinkedIn</a>
+                    </div>
+                    <div class="app-download">
+                        <p>Download Our App</p>
+                        <button class="app-btn">📱 App Store</button>
+                        <button class="app-btn">🤖 Google Play</button>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -311,6 +454,7 @@
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                     <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
                 </div>
             </div>
         </div>

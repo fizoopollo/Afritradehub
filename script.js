@@ -1,177 +1,160 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offset = 80;
-            const targetPosition = target.offsetTop - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
-// Hamburger menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Add active class to nav menu for mobile
-const style = document.createElement('style');
-style.textContent = `
-    @media (max-width: 968px) {
-        .nav-menu {
-            position: absolute;
-            left: -100%;
-            top: 70px;
-            flex-direction: column;
-            background-color: white;
-            width: 100%;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-            padding: 2rem 0;
-        }
-
-        .nav-menu.active {
-            left: 0;
-            display: flex;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+// Search functionality
+document.querySelector('.search-btn')?.addEventListener('click', function() {
+    const searchInput = document.querySelector('.search-input');
+    const categorySelect = document.querySelector('.category-select');
+    
+    if (searchInput.value.trim()) {
+        console.log('Searching for:', searchInput.value, 'in category:', categorySelect.value);
+        alert(`Searching for: ${searchInput.value}\nCategory: ${categorySelect.value}`);
     } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        alert('Please enter a search term');
     }
 });
 
-// Form submission handler
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+// Product cards - Contact Supplier
+document.querySelectorAll('.btn-contact').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        const productName = productCard.querySelector('h4').textContent;
+        alert(`Contact form would open for: ${productName}\n\nIn a real implementation, this would open a contact modal or redirect to a contact page.`);
+    });
+});
+
+// Supplier cards - View Company
+document.querySelectorAll('.supplier-card .btn-outline').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const supplierCard = this.closest('.supplier-card');
+        const companyName = supplierCard.querySelector('h3').textContent;
+        alert(`Viewing company profile: ${companyName}\n\nIn a real implementation, this would navigate to the company's profile page.`);
+    });
+});
+
+// Category cards click
+document.querySelectorAll('.category-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const categoryName = this.querySelector('h3').textContent;
+        console.log('Category clicked:', categoryName);
+        alert(`Browsing category: ${categoryName}\n\nIn a real implementation, this would show products in this category.`);
+    });
+});
+
+// Service cards
+document.querySelectorAll('.service-link').forEach(link => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        // Get form values
-        const formData = new FormData(contactForm);
-        
-        // Here you would typically send the data to a server
-        // For now, we'll just show an alert
-        alert('Thank you for your message! We will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
+        const serviceName = this.closest('.service-card').querySelector('h3').textContent;
+        alert(`Opening: ${serviceName}\n\nIn a real implementation, this would navigate to the service page.`);
     });
-}
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Add animation styles
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-    .feature-card,
-    .solution-card,
-    .pricing-card {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-`;
-document.head.appendChild(animationStyle);
-
-// Observe elements
-document.querySelectorAll('.feature-card, .solution-card, .pricing-card').forEach(el => {
-    observer.observe(el);
 });
 
-// Counter animation for hero stats
-const animateCounter = (element, target, duration = 2000) => {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = formatNumber(target);
-            clearInterval(timer);
-        } else {
-            element.textContent = formatNumber(Math.floor(current));
-        }
-    }, 16);
-};
-
-const formatNumber = (num) => {
-    if (num >= 1000000000) {
-        return (num / 1000000000).toFixed(1) + 'B+';
-    } else if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M+';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K+';
+// Header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.main-header');
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    } else {
+        header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
     }
-    return num.toString();
-};
+    
+    lastScroll = currentScroll;
+});
 
-// Trigger counter animation when hero section is visible
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    const heroObserver = new IntersectionObserver((entries) => {
+// CTA Buttons
+document.querySelectorAll('.cta-banner button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.textContent.includes('Buying') ? 'buying' : 'selling';
+        alert(`Welcome to AfriTradeHub!\n\nYou selected: Start ${action}\n\nIn a real implementation, this would navigate to registration/onboarding.`);
+    });
+});
+
+// Hero CTA
+document.querySelector('.slide-content .btn-primary')?.addEventListener('click', function() {
+    alert('Start Sourcing Now!\n\nIn a real implementation, this would navigate to the product search or signup page.');
+});
+
+// Messages and Orders buttons
+document.querySelectorAll('.btn-icon').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.textContent.trim();
+        alert(`Opening ${action}...\n\nIn a real implementation, this would show your ${action.toLowerCase()} panel.`);
+    });
+});
+
+// Sign In / Join Free buttons
+document.querySelectorAll('.header-actions .btn-secondary, .header-actions .btn-primary').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.textContent.trim();
+        alert(`${action} form would appear here.\n\nIn a real implementation, this would open a login/signup modal or redirect to auth page.`);
+    });
+});
+
+// Add hover effects to product cards
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.borderColor = 'var(--primary-color)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.borderColor = 'var(--border-color)';
+    });
+});
+
+// Regional market links
+document.querySelectorAll('.region-card a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const location = this.textContent.trim();
+        alert(`Browsing suppliers in: ${location}\n\nIn a real implementation, this would filter suppliers by location.`);
+    });
+});
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('AfriTradeHub B2B Marketplace loaded successfully!');
+    
+    // Add animation to cards on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const stats = [
-                    { selector: '.hero-stats .stat:nth-child(1) h3', value: 10000 },
-                    { selector: '.hero-stats .stat:nth-child(2) h3', value: 2500000000 },
-                    { selector: '.hero-stats .stat:nth-child(3) h3', value: 99.9 }
-                ];
-
-                stats.forEach((stat, index) => {
-                    setTimeout(() => {
-                        const element = document.querySelector(stat.selector);
-                        if (element && index < 2) {
-                            animateCounter(element, stat.value);
-                        }
-                    }, index * 200);
-                });
-
-                heroObserver.unobserve(entry.target);
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.5 });
-
-    heroObserver.observe(heroStats);
-}
-
-// Add hover effect to buttons
-document.querySelectorAll('button, .learn-more').forEach(button => {
-    button.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
+    }, observerOptions);
+    
+    // Observe cards
+    document.querySelectorAll('.product-card, .supplier-card, .service-card, .category-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
     });
 });
 
-console.log('AfriTradeHub website loaded successfully!');
+// Search on Enter key
+document.querySelector('.search-input')?.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        document.querySelector('.search-btn').click();
+    }
+});
+
+console.log('AfriTradeHub - Africa\'s Leading B2B Marketplace');
