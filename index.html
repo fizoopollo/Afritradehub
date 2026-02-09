@@ -601,7 +601,7 @@
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userName', email.split('@')[0]);
             closeModal('signinModal');
-            alert('✓ Welcome back!');
+            // Silent login - no alert
             location.reload();
         });
         
@@ -619,7 +619,7 @@
             localStorage.setItem('isLoggedIn', 'true');
             
             closeModal('signupModal');
-            alert('✓ Account created! Welcome ' + firstName + '!');
+            // Silent signup - no alert
             location.reload();
         });
     </script>
