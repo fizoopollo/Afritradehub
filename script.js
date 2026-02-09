@@ -174,4 +174,4 @@ document.querySelectorAll('button, .learn-more').forEach(button => {
     });
 });
 
-console.log('B2B Platform website loaded successfully!');
+console.log('AfriTradeHub website loaded successfully!');
