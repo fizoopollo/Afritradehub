@@ -611,7 +611,7 @@
             const firstName = document.getElementById('signupFirstName').value;
             const lastName = document.getElementById('signupLastName').value;
             const email = document.getElementById('signupEmail').value;
-            const phone = document.getElementById('signupPhone').value; const confirmPassword = document.getElementById('signupConfirmPassword').value; const isSupplier = document.getElementById('joinAsSupplier').checked; if (signupPassword.value !== confirmPassword) { showSignupError('Passwords do not match!'); return; }
+            const phone = document.getElementById('signupCountryCode').value + document.getElementById('signupPhone').value; const confirmPassword = document.getElementById('signupConfirmPassword').value; const isSupplier = document.getElementById('joinAsSupplier').checked; if (signupPassword.value !== confirmPassword) { showSignupError('Passwords do not match!'); return; }
             
             localStorage.setItem('userEmail', email);
             localStorage.setItem('userName', firstName + ' ' + lastName);
@@ -625,6 +625,8 @@
     function updateAccountType() { const checkbox = document.getElementById('joinAsSupplier'); document.getElementById('signupAccountType').value = checkbox.checked ? 'supplier' : 'buyer'; } function showSignupError(msg) { const err = document.getElementById('signupError'); err.textContent = msg; err.style.display = 'block'; setTimeout(() => err.style.display = 'none', 5000); }</script><script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
