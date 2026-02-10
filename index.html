@@ -510,7 +510,7 @@
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number *</label>
-                    <input type="text" id="signupPhone" type="tel" placeholder="+234 800 000 0000" required style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px;">
+                    <div style="display: flex; gap: 10px;"><select id="signupCountryCode" style="width: 140px; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 0.95rem; background: white;"><option value="+234">???? +234</option><option value="+233">???? +233</option><option value="+254">???? +254</option><option value="+27">???? +27</option><option value="+20">???? +20</option><option value="+212">???? +212</option><option value="+251">???? +251</option><option value="+255">???? +255</option><option value="+256">???? +256</option><option value="+221">???? +221</option></select><input type="tel" id="signupPhone" required placeholder="800 000 0000" style="flex: 1; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 1rem;"></div>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 600;">Password</label>
@@ -625,6 +625,7 @@
     function updateAccountType() { const checkbox = document.getElementById('joinAsSupplier'); document.getElementById('signupAccountType').value = checkbox.checked ? 'supplier' : 'buyer'; } function showSignupError(msg) { const err = document.getElementById('signupError'); err.textContent = msg; err.style.display = 'block'; setTimeout(() => err.style.display = 'none', 5000); }</script><script src="script.js"></script>
 </body>
 </html>
+
 
 
 
