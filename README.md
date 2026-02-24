@@ -1,66 +1,73 @@
-# AfriTradeHub - B2B Business Platform
+# Welcome to your Afritradehub project
 
-A modern, responsive B2B business platform website built with HTML, CSS, and JavaScript.
+## Project info
 
-## Features
+**URL**: https://github.com/fizoopollo/africa-connect-hub/afritradehub
 
-- 📱 Fully responsive design
-- 🎨 Modern gradient UI
-- ✨ Smooth animations
-- 📊 Analytics dashboard preview
-- 💼 Professional B2B sections
-- 📝 Contact form
-- 💰 Pricing tables
-- 🔗 Integration capabilities showcase
+## How can I edit this code?
 
-## Quick Start
+There are several ways of editing your application.
 
-Simply open `index.html` in your browser to view the website locally.
+**Use Afritradehub**
 
-## Deployment
+Simply visit the [Afritradehub Project](https://github.com/fizoopollo/africa-connect-hub/afritradehub) and start prompting.
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions to various platforms.
+Changes made via Afritradehub will be committed automatically to this repo.
 
-## Structure
+**Use your preferred IDE**
 
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Afritradehub.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
-Afritradehub/
-├── index.html      # Main HTML file
-├── styles.css      # All styling
-├── script.js       # Interactive features
-├── README.md       # This file
-└── DEPLOYMENT.md   # Deployment guide
-```
 
-## Technologies Used
+**Edit a file directly in GitHub**
 
-- HTML5
-- CSS3 (with CSS Grid & Flexbox)
-- Vanilla JavaScript
-- Google Fonts (Inter)
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## Browser Support
+**Use GitHub Codespaces**
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Customization
+## What technologies are used for this project?
 
-1. **Colors**: Edit CSS variables in `styles.css` (`:root` section)
-2. **Content**: Update text in `index.html`
-3. **Contact Info**: Change email, phone, address in contact section
-4. **Pricing**: Modify pricing tiers in pricing section
+This project is built with:
 
-## Live Demo
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-Visit the live website: [https://fizoopollo.github.io/Afritradehub/](https://fizoopollo.github.io/Afritradehub/)
+## How can I deploy this project?
 
-## License
+Simply open [Afritradehub](https://github.com/fizoopollo/africa-connect-hub/afritradehub) and click on Share -> Publish.
 
-Free to use for personal and commercial projects.
+## Can I connect a custom domain to my Afritradehub project?
 
----
+Yes, you can!
 
-Built with ❤️ for B2B businesses
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
