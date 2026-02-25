@@ -26,12 +26,16 @@ export default function TradehubDirectory() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
   const [selectedCountry, setSelectedCountry] = useState("All Countries");
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
+  const [premiumOnly, setPremiumOnly] = useState(false);
 
   const filtered = mockCompanies.filter((c) => {
     const matchesSearch = c.name.toLowerCase().includes(searchQuery.toLowerCase()) || c.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesIndustry = selectedIndustry === "All Industries" || c.industry === selectedIndustry;
     const matchesCountry = selectedCountry === "All Countries" || c.country === selectedCountry;
-    return matchesSearch && matchesIndustry && matchesCountry;
+    const matchesVerified = !verifiedOnly || c.verified;
+    const matchesPremium = !premiumOnly || c.premium;
+    return matchesSearch && matchesIndustry && matchesCountry && matchesVerified && matchesPremium;
   });
 
   return (
@@ -79,8 +83,9 @@ export default function TradehubDirectory() {
 
               <div className="space-y-4">
                 <div>
-                  <label className="text-xs text-muted-foreground font-medium mb-1.5 block">Industry</label>
+                  <label htmlFor="industry-select" className="text-xs text-muted-foreground font-medium mb-1.5 block">Industry</label>
                   <select
+                    id="industry-select"
                     value={selectedIndustry}
                     onChange={(e) => setSelectedIndustry(e.target.value)}
                     className="w-full h-10 px-3 rounded-lg border border-border bg-background text-sm"
@@ -89,8 +94,9 @@ export default function TradehubDirectory() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs text-muted-foreground font-medium mb-1.5 block">Country</label>
+                  <label htmlFor="country-select" className="text-xs text-muted-foreground font-medium mb-1.5 block">Country</label>
                   <select
+                    id="country-select"
                     value={selectedCountry}
                     onChange={(e) => setSelectedCountry(e.target.value)}
                     className="w-full h-10 px-3 rounded-lg border border-border bg-background text-sm"
@@ -99,11 +105,23 @@ export default function TradehubDirectory() {
                   </select>
                 </div>
                 <div className="flex items-center gap-2">
-                  <input type="checkbox" id="verified" className="rounded border-border" />
+                  <input
+                    type="checkbox"
+                    id="verified"
+                    className="rounded border-border"
+                    checked={verifiedOnly}
+                    onChange={(e) => setVerifiedOnly(e.target.checked)}
+                  />
                   <label htmlFor="verified" className="text-sm">Verified only</label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <input type="checkbox" id="premium" className="rounded border-border" />
+                  <input
+                    type="checkbox"
+                    id="premium"
+                    className="rounded border-border"
+                    checked={premiumOnly}
+                    onChange={(e) => setPremiumOnly(e.target.checked)}
+                  />
                   <label htmlFor="premium" className="text-sm">Premium suppliers</label>
                 </div>
               </div>
