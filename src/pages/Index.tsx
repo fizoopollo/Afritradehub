@@ -5,8 +5,18 @@ import PageLayout from "@/components/layout/PageLayout";
 import {
   Search, Globe, ShieldCheck, TrendingUp, Store, LayoutGrid,
   ArrowRight, Users, Package, MessageSquare, Zap, BarChart3,
-  CheckCircle2, Star
+  CheckCircle2, Star, Sprout, Shirt, Smartphone, Building,
+  Cog, Gem
 } from "lucide-react";
+
+const categories = [
+  { icon: Sprout, name: "Agriculture & Food", count: "12,450 suppliers" },
+  { icon: Shirt, name: "Fashion & Apparel", count: "8,230 suppliers" },
+  { icon: Smartphone, name: "Electronics", count: "15,670 suppliers" },
+  { icon: Building, name: "Construction", count: "6,890 suppliers" },
+  { icon: Cog, name: "Machinery", count: "4,120 suppliers" },
+  { icon: Gem, name: "Mining & Metals", count: "2,340 suppliers" },
+];
 import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeUp = {
@@ -39,7 +49,7 @@ const afrifySFeatures = [
 ];
 
 const testimonials = [
-  { name: "Amara Okafor", role: "CEO, Lagos Textiles", text: "Afritradehub connected us with 200+ buyers across West Africa in just 3 months.", rating: 5 },
+  { name: "Amara Okafor", role: "CEO, Lagos Textiles", text: "AfriTradeHub connected us with 200+ buyers across West Africa in just 3 months.", rating: 5 },
   { name: "Kwame Asante", role: "Founder, GhanaGreen", text: "Afrify made it possible to launch our online store in a single afternoon. Sales tripled!", rating: 5 },
   { name: "Fatima Hassan", role: "MD, Nairobi Imports", text: "The RFQ system saved us 60% on procurement costs. Game-changer for our business.", rating: 5 },
 ];
@@ -62,12 +72,12 @@ export default function LandingPage() {
             </motion.div>
 
             <motion.h1 custom={1} variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] text-background mb-6">
-              Trade Across Africa,{" "}
-              <span className="text-gradient-primary">Build Without Limits</span>
+              Connect with Verified{" "}
+              <span className="text-gradient-primary">African Suppliers</span>
             </motion.h1>
 
             <motion.p custom={2} variants={fadeUp} className="text-lg md:text-xl text-background/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Connect with verified suppliers, discover new markets, or launch your own online store — all on one platform built for African business.
+              Access millions of products from trusted manufacturers and wholesalers across the continent.
             </motion.p>
 
             <motion.div custom={3} variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -103,11 +113,41 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Afritradehub Section */}
+      {/* Browse by Category */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl font-black">Browse by Category</h2>
+            <Link to="/tradehub" className="text-primary font-bold hover:underline flex items-center gap-1">
+              View All <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {categories.map((cat, i) => (
+              <motion.div
+                key={cat.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all text-center cursor-pointer"
+              >
+                <div className="h-16 w-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/10 transition-colors">
+                  <cat.icon className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-sm mb-1">{cat.name}</h3>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">{cat.count}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AfriTradeHub Section */}
       <section className="py-24 bg-surface-sunken">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Afritradehub</span>
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">AfriTradeHub</span>
             <h2 className="text-3xl md:text-5xl font-black mt-3 mb-4">B2B Directory & Marketplace</h2>
             <p className="text-muted-foreground text-lg">
               Discover, connect, and trade with verified businesses across the continent.

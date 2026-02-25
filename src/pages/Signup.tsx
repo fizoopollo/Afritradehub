@@ -38,7 +38,7 @@ export default function SignupPage() {
               <div className="h-8 w-8 rounded-lg bg-hero-gradient flex items-center justify-center">
                 <Globe className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">Afritrade</span>
+              <span className="text-lg font-bold">AfriTradeHub</span>
             </Link>
             <h1 className="text-2xl font-black mb-2">Create your account</h1>
             <p className="text-muted-foreground text-sm">

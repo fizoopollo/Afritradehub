@@ -18,7 +18,7 @@ export default function LoginPage() {
           <div className="h-12 w-12 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-8">
             <Globe className="h-7 w-7" />
           </div>
-          <h2 className="text-4xl font-black mb-4">Welcome back to Afritrade</h2>
+          <h2 className="text-4xl font-black mb-4">Welcome back to AfriTradeHub</h2>
           <p className="text-primary-foreground/70 text-lg leading-relaxed">
             Connect with verified businesses, manage your store, and grow your African trade network.
           </p>
@@ -37,7 +37,7 @@ export default function LoginPage() {
               <div className="h-8 w-8 rounded-lg bg-hero-gradient flex items-center justify-center">
                 <Globe className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">Afritrade</span>
+              <span className="text-lg font-bold">AfriTradeHub</span>
             </Link>
             <h1 className="text-2xl font-black mb-2">Sign in to your account</h1>
             <p className="text-muted-foreground text-sm">

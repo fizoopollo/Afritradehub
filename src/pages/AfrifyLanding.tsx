@@ -75,9 +75,11 @@ export default function AfrifyLanding() {
                   Start Building Free <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
-              <Button variant="outline" size="xl">
-                <Smartphone className="h-5 w-5" /> View Demo Store
-              </Button>
+              <Link to="/coming-soon">
+                <Button variant="outline" size="xl">
+                  <Smartphone className="h-5 w-5" /> View Demo Store
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -177,9 +179,11 @@ export default function AfrifyLanding() {
                     </li>
                   ))}
                 </ul>
-                <Button variant={plan.variant} className="w-full">
-                  {plan.cta}
-                </Button>
+                <Link to="/signup">
+                  <Button variant={plan.variant} className="w-full">
+                    {plan.cta}
+                  </Button>
+                </Link>
               </motion.div>
             ))}
           </div>

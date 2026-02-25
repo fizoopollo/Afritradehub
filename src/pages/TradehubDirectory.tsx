@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -170,8 +171,12 @@ export default function TradehubDirectory() {
                       </div>
                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{company.description}</p>
                       <div className="mt-4 flex gap-2">
-                        <Button size="sm" variant="hero">Contact Supplier</Button>
-                        <Button size="sm" variant="outline">View Profile</Button>
+                        <Link to="/contact">
+                          <Button size="sm" variant="hero">Contact Supplier</Button>
+                        </Link>
+                        <Link to="/tradehub">
+                          <Button size="sm" variant="outline">View Profile</Button>
+                        </Link>
                       </div>
                     </div>
                   </div>

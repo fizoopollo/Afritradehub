@@ -3,7 +3,7 @@ import { Globe } from "lucide-react";
 
 const footerLinks = {
   Platform: [
-    { label: "Afritradehub", href: "/tradehub" },
+    { label: "AfriTradeHub", href: "/tradehub" },
     { label: "Afrify Store Builder", href: "/afrify" },
     { label: "Pricing", href: "/pricing" },
   ],
@@ -35,7 +35,7 @@ export default function Footer() {
               <div className="h-8 w-8 rounded-lg bg-hero-gradient flex items-center justify-center">
                 <Globe className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">Afritrade</span>
+              <span className="text-lg font-bold">AfriTradeHub</span>
             </Link>
             <p className="text-sm text-background/60 leading-relaxed">
               Powering African trade through technology. Connect, build, grow.
@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-background/40">
-            © {new Date().getFullYear()} Afritrade. All rights reserved.
+            © {new Date().getFullYear()} AfriTradeHub. All rights reserved.
           </p>
           <div className="flex gap-4">
             <span className="text-xs text-background/40">🌍 Made for Africa, by Africa</span>

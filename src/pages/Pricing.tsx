@@ -55,7 +55,7 @@ export default function PricingPage() {
       {/* Tradehub Plans */}
       <section className="py-20">
         <div className="container">
-          <h2 className="text-2xl font-bold text-center mb-2">Afritradehub Plans</h2>
+          <h2 className="text-2xl font-bold text-center mb-2">AfriTradeHub Plans</h2>
           <p className="text-center text-muted-foreground mb-12">For B2B directory and marketplace access</p>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {tradehubPlans.map((plan, i) => (
@@ -85,7 +85,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button variant={plan.variant} className="w-full">Get Started</Button>
+                <Link to="/signup">
+                  <Button variant={plan.variant} className="w-full">Get Started</Button>
+                </Link>
               </motion.div>
             ))}
           </div>

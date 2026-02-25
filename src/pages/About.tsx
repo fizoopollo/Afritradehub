@@ -1,7 +1,6 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { Globe, Users, Target, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
+import PageLayout from "@/components/layout/PageLayout";
 
 const values = [
   {
@@ -23,9 +22,8 @@ const values = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main className="pt-24 pb-16">
+    <PageLayout>
+      <div className="py-24">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -36,7 +34,7 @@ export default function About() {
               Empowering the Future of <span className="text-gradient-primary">African Trade</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Afritradehub is on a mission to digitize and connect the African B2B ecosystem,
+              AfriTradeHub is on a mission to digitize and connect the African B2B ecosystem,
               making it easier than ever for businesses to find partners and grow online.
             </p>
           </motion.div>
@@ -61,7 +59,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
+          <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, idx) => (
               <motion.div
                 key={value.title}
@@ -77,8 +75,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageLayout>
   );
 }

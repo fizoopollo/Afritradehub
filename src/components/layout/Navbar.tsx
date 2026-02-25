@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Menu, X, Globe, Bell, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Afritradehub", href: "/tradehub", description: "B2B Directory" },
+  { label: "AfriTradeHub", href: "/tradehub", description: "B2B Directory" },
   { label: "Afrify", href: "/afrify", description: "Store Builder" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
@@ -23,14 +24,28 @@ export default function Navbar() {
           <div className="h-9 w-9 rounded-lg bg-hero-gradient flex items-center justify-center">
             <Globe className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-extrabold tracking-tight">
-            <span className="text-gradient-primary">Afri</span>
-            <span className="text-foreground">trade</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl font-extrabold tracking-tight leading-none">
+              <span className="text-gradient-primary">Afri</span>
+              <span className="text-foreground">TradeHub</span>
+            </span>
+            <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider leading-none">
+              Africa's B2B Marketplace
+            </span>
+          </div>
         </Link>
 
+        {/* Search Bar - Center */}
+        <div className="hidden lg:flex flex-1 max-w-md mx-8 relative">
+          <Input
+            placeholder="Search products, suppliers, countries..."
+            className="pl-10 h-10 bg-muted/50 border-none focus-visible:ring-1 focus-visible:ring-primary"
+          />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        </div>
+
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -48,17 +63,14 @@ export default function Navbar() {
 
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="icon">
-            <Search className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Bell className="h-4 w-4" />
-          </Button>
+          <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-2">
+            Admin
+          </Link>
           <Link to="/login">
             <Button variant="outline" size="sm">Log In</Button>
           </Link>
           <Link to="/signup">
-            <Button variant="hero" size="sm">Get Started</Button>
+            <Button variant="hero" size="sm">Join Free</Button>
           </Link>
         </div>
 

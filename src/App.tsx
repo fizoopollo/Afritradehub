@@ -20,7 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/Afritradehub">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tradehub" element={<TradehubDirectory />} />
@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
 
           {/* Placeholder routes for footer links */}
+          <Route path="/coming-soon" element={<ComingSoon />} />
           <Route path="/careers" element={<ComingSoon />} />
           <Route path="/contact" element={<ComingSoon />} />
           <Route path="/docs" element={<ComingSoon />} />
