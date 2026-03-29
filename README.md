@@ -1,66 +1,54 @@
-# AfriTradeHub - B2B Business Platform
+# AfriTradeHub - Africa's B2B Marketplace
 
-A modern, responsive B2B business platform website built with HTML, CSS, and JavaScript.
+AfriTradeHub is a pan-African B2B trade platform designed to connect verified suppliers with buyers across the continent. Built with modern technologies, it provides a seamless experience for finding partners, managing products, and scaling businesses in Africa.
 
-## Features
+## 🚀 Technologies
 
-- 📱 Fully responsive design
-- 🎨 Modern gradient UI
-- ✨ Smooth animations
-- 📊 Analytics dashboard preview
-- 💼 Professional B2B sections
-- 📝 Contact form
-- 💰 Pricing tables
-- 🔗 Integration capabilities showcase
+- **Frontend:** React, Vite, TypeScript
+- **Styling:** Tailwind CSS, shadcn/ui
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
+- **State Management:** Zustand
+- **Routing:** React Router DOM
 
-## Quick Start
+## 🛠️ Getting Started
 
-Simply open `index.html` in your browser to view the website locally.
+### Prerequisites
 
-## Deployment
+- Node.js (v18 or higher)
+- npm
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions to various platforms.
+### Installation
 
-## Structure
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/fizoopollo/Afritradehub.git
+   ```
 
+2. Navigate to the project directory:
+   ```sh
+   cd Afritradehub
+   ```
+
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## 📦 Build and Deployment
+
+To create a production build:
+```sh
+npm run build
 ```
-Afritradehub/
-├── index.html      # Main HTML file
-├── styles.css      # All styling
-├── script.js       # Interactive features
-├── README.md       # This file
-└── DEPLOYMENT.md   # Deployment guide
-```
 
-## Technologies Used
+The project is configured for deployment on GitHub Pages. The build output will be in the `dist` directory.
 
-- HTML5
-- CSS3 (with CSS Grid & Flexbox)
-- Vanilla JavaScript
-- Google Fonts (Inter)
+## 📄 License
 
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Customization
-
-1. **Colors**: Edit CSS variables in `styles.css` (`:root` section)
-2. **Content**: Update text in `index.html`
-3. **Contact Info**: Change email, phone, address in contact section
-4. **Pricing**: Modify pricing tiers in pricing section
-
-## Live Demo
-
-Visit the live website: [https://fizoopollo.github.io/Afritradehub/](https://fizoopollo.github.io/Afritradehub/)
-
-## License
-
-Free to use for personal and commercial projects.
-
----
-
-Built with ❤️ for B2B businesses
+This project is for internal use by AfriTradeHub.
