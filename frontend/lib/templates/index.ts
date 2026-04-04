@@ -1,0 +1,9 @@
+export { artTemplates } from './artTemplates';
+export { beautyTemplates } from './beautyTemplates';
+export { autoTemplates } from './autoTemplates';
+export { bagsTemplates } from './bagsTemplates';
+export { servicesTemplates } from './servicesTemplates';
+export { electronicsTemplates } from './electronicsTemplates';
+export { fashionTemplates } from './fashionTemplates';
+export { foodTemplates } from './foodTemplates';
+export { handmadeTemplates } from './handmadeTemplates';

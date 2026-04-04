@@ -1,0 +1,47 @@
+[build]
+  # Build command to compile the frontend
+  command = "cd frontend && npm run build"
+  # Directory to deploy
+  publish = "frontend/.next"
+  # Functions directory for serverless functions
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "18.17.1"
+  NEXT_PUBLIC_API_URL = "https://api.example.com"
+
+# Redirect all routes to Next.js (for SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache control headers
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Configure edge functions (if needed)
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
+
+# Preview deployment settings
+[context.deploy-preview]
+  command = "cd frontend && npm run build"
+  environment = { NEXT_PUBLIC_API_URL = "https://preview-api.example.com" }
+
+[context.branch-deploy]
+  command = "cd frontend && npm run build"
+  environment = { NEXT_PUBLIC_API_URL = "https://branch-api.example.com" }

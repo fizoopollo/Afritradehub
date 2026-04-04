@@ -1,0 +1,12 @@
+# Afritradehub frontend - Next.js 14
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+COPY frontend/package.json frontend/pnpm-lock.yaml* ./
+RUN pnpm install --frozen-lockfile || pnpm install
+
+COPY frontend/ .
+EXPOSE 3000
+CMD ["pnpm", "dev"]
