@@ -104,6 +104,10 @@ cd backend && python manage.py seed_data
 └── README.md
 ```
 
+## GitHub
+
+To publish this project on GitHub, create an empty repository and push from your machine. Step-by-step instructions: [docs/GITHUB_SETUP.md](docs/GITHUB_SETUP.md).
+
 ## Documentation
 
 - [Setup & development](docs/SETUP.md)
