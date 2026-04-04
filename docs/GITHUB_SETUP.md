@@ -15,8 +15,8 @@ In PowerShell, from the project root (`Afritradehub 2`):
 ```powershell
 cd "c:\Users\fezza\Afritradehub 2"
 
-# Use YOUR username and repo name:
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+# This project’s GitHub remote (update if you fork):
+git remote add origin https://github.com/fizoopollo/Afritradehub.git
 
 # If you already have a wrong origin, remove it first:
 # git remote remove origin
